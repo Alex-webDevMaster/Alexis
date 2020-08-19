@@ -10,9 +10,168 @@ $black: #313131
 $form: #cccccc
 $footer: #2a2b35
 
+// Mixins=====================================>
+
+@mixin pseudo ($color)
+    &::after
+        content: ''
+        display: block
+        height: 3px
+        width: 100%
+        position: absolute
+        left: 0
+        bottom: 0
+        background: $color    
+
+//Some basics=====================================>
+
 body
     font-family: 'Poppins'
     font-size: 15px
     line-height: 27px
     color: #616161
+
+
+.section-header
+    margin: 0 auto
+    text-align: center
+    &__num
+        color: #f0f0f0
+        font-size: 274px
+        font-weight: 900
+        position: relative
+        top: -40px
+    &__title
+        margin-bottom: 44px
+        color: #313131
+        font-weight: bold
+        font-family: 'Libre Baskerville'
+        font-size: 50px
+        position: relative
+    &__text    
+        margin-bottom: 84px
+        font-size: 18px
+
+
+// Header=====================================>
+
+.navbar
+    height: 80px
+    &__logo
+        display: block
+    &__menu
+        display: flex
+        justify-content: space-between
+    &__item
+        color: #272727
+
+
+// Intro======================================>
+
+.intro
+    padding: 175px 0
+    background-color: $gray
+    text-align: center
+    &__title
+        color: white
+        font-family: 'Libre Baskerville'
+        font-size: 60px
+        line-height: 85px
+        margin-bottom: 65px
+    &__button
+        width: 180px
+        height: 50px
+        background-color: $orange
+        color: white
+        border-radius: 25px
+        text-transform: uppercase
+        margin: 0 auto
+        margin-bottom: 80px
+    &__item
+        align-items: center
+        text-transform: uppercase
+        font-size: 18px
+    &__text
+        margin-top: 44px
+        &_green
+            color: $green
+        &_purple
+            color: $purple
+        &_yellow
+            color: $yellow
+
+// About======================================> 
+
+.about
+    padding: 150px 0
+    &__wrapper
+        position: relative
+    &__poster
+        width: 650px
+        height: 550px
+        padding: 115px 80px
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 43%
+        background-color: white
+        &::after
+            content: ''
+            display: block
+            width: 100%
+            height: 3px
+            position: inherit
+            left: 0
+            bottom: 0    
+            background: linear-gradient(to right, $orange 0%, $orange 25%, $green 25%, $green 50%, $purple 50%, $purple 75%, $yellow 75%, $yellow 100%)  
+    &__title
+        margin-bottom: 30px
+        color: #313131
+        font-weight: bold
+        font-family: 'Libre Baskerville'
+        font-size: 50px
+    &__text
+        white-space: pre-line
+
+//Focus======================================> 
+
+.focus
+    padding: 150px 0 
+    background-color: #f7f7f7
+    &__item
+        text-align: center
+        padding: 60px 33px 70px;
+        margin: 0 15px
+        position: relative
+        background-color: white
+        box-shadow: 0 -1px 10px 2px #ccc
+        &_orange
+            @include pseudo ($orange)
+        &_green
+            @include pseudo ($green)
+        &_purple
+            @include pseudo ($purple)
+        &_yellow
+            @include pseudo ($yellow)
+    &__icon
+        height: 50px
+    &__title
+        font-weight: 500
+        font-size: 20px
+        margin: 32px 0 
+
+//Video======================================> 
+
+.video
+    background-color: $gray
+    padding: 150px 0
+    color: white
+    &__wrapper
+        text-align: center
+    &__title
+        font-size: 30px
+    &__player
+        width: 80px
+        height: 80px
+        margin: 40px 0 
 
